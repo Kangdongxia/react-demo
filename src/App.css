@@ -1,4 +1,5 @@
 .App {
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -7,6 +8,7 @@
   pointer-events: none;
 }
 
+@import '~antd/dist/antd.css';
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
