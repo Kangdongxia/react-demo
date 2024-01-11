@@ -1,40 +1,9 @@
+/*
+  @import '~antd/dist/antd.css' layer;
+ * antd.css被设置为匿名层，会导致额外需要引入ant-icons的组件（如Alert）应该有的样式生效，原因是这一类组件会自动引入
+ ant-design-icons的样式，以style标签的形式引入，其优先级高于匿名层里antd本来的样式，导致匿名层里的样式被ant-design-icons的样式覆盖
+ */
+@import '~antd/dist/antd.css';
 .App {
   margin-top: 20px;
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@import '~antd/dist/antd.css';
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

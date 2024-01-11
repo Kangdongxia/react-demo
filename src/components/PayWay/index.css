@@ -1,0 +1,9 @@
+/** 
+antd的样式加载写在App.css里，自定义的样式写在这里，样式文件的加载顺序是自定义layer custom，App, 匿名layer
+匿名层的加载顺序靠后，优先级高于自定义，导致自定义层所写的样式被覆盖，因此自定义样式不生效
+*/
+@layer custom {
+    .root .ant-btn-primary {
+        background-color: brown;
+    } 
+}

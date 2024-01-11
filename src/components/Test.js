@@ -1,9 +1,10 @@
 import React from 'react';
-import { Form, Input, Space } from 'antd';
-import { CheckCircleFilled } from '@ant-design/icons';
+import { Form, Input, Space, Button } from 'antd';
+// import { CheckCircleFilled, ExclamationCircleOutlined } from '@ant-design/icons';
+import PayWay from './PayWay';
 const Test = () => {
   return (
-    <Form labelCol={{ span: 2 }} wrapperCol={{ span: 6 }}>
+    <Form labelCol={{ span: 2 }} wrapperCol={{ span: 16 }}>
       <Form.Item 
         label="第一笔支付金额" 
         required
@@ -14,23 +15,38 @@ const Test = () => {
             name="username"
             rules={[{ required: true, message: 'Username is required' }]}
             extra={
-              <Space style={{ width: 510, marginTop: '6px' }} align='start' wrap>
-                <div>支付时间：2022-10-22</div>
-                <div>订单编号：7865123456789543</div>
-                <div>支付金额：300000元</div>
-              </Space> 
+              // <Space direction='vertical'>
+              //   <Space direction='vertical' wrap>
+              //     <div>支付时间：2022-10-22</div>
+              //     <div>订单编号：7865123456789543</div>
+              //     <div>支付金额：300000元</div>
+              //   </Space> 
+              //   <Space>
+              //     <Button type="primary">
+              //       取消关联
+              //     </Button>
+              //     <ExclamationCircleOutlined style={{ color: '#fa8c16' }} />
+              //     <div>
+              //       取消关联后需重新计算待支付金额并重新拆分金额
+              //     </div>
+              //   </Space>
+              // </Space>
+              <PayWay 
+                isToBeConfirm={false}
+              />
             }
           >
-            <Input style={{ width: 510 }} placeholder="请输入支付金额" />
+            { /** extra内容宽度边长，input的宽度也会变长，因此不需要给input 设置 width, 设置 minWidth 是为了防止extra内容长度变化时，input长度变化 */}
+            <Input style={{ marginBottom: '6px', minWidth: 558 }} placeholder="请输入支付金额" />
           </Form.Item>
           {/* <Button type="primary">增加</Button>  */}
-          <CheckCircleFilled 
+          {/* <CheckCircleFilled 
             style={{ 
               fontSize: '16px', 
               color: '#73d13d', 
               verticalAlign: 'middle'
             }} 
-          />
+          /> */}
           <div>已支付</div>
         </Space>
       </Form.Item>
